@@ -1,0 +1,40 @@
+<div class="container mt-6">
+    <div class = "col-lg-4">
+        
+
+        <div *ngIf="errormessage" class="alert alert-danger" role="alert">
+            <strong>{{errormessage}}</strong>
+          </div>
+
+          <div *ngIf="successmessage" class="alert alert-success" role="alert">
+            <strong>{{successmessage}}</strong>
+          </div>
+
+    </div>
+    <form [formGroup]="entryForm"  (ngSubmit)="entrySubmit()">
+        <br>
+        <div>
+            <button class="btn btn-primary">Save Entry</button>
+        </div>
+       <br>
+               <div class="col-md-5" style="display:flex">
+                    <input type="text" class = "form-control" formControlName="title" placeholder="Enter Title Here">
+                </div>
+                <br>
+               <div class="col-md-5" style="display:flex">
+                    <input type="text" class = "form-control" formControlName="stock_ticker" placeholder="Enter Stock Ticker Here">
+                </div>
+                <br>
+                <div class="col-md-5" style="display:flex">
+                    <input type="date"  class = "form-control" formControlName="date" placeholder="Enter Date Here">
+                </div> 
+                <br>         
+    
+        
+        <div class="col-lg-4">
+            <input type="text" class ="form-control" formControlName="notes" placeholder="Enter Notes Here">
+        
+        </div>
+        
+    </form>
+</div>

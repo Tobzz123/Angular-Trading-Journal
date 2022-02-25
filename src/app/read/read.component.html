@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <br>
+
+    <div *ngIf="successmessage" class="alert alert-success" role="alert">
+        <strong>{{successmessage}}</strong>
+      </div>
+      <br>
+
+    <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Ticker</th>
+            <th scope="col">Date</th>
+            <th scope="col">Notes</th>
+            <th scope="col">Edit/Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let entry of readEntry'>
+            <th scope="row">{{entry.id}}</th>
+            <td>{{entry.title}}</td>
+            <td>{{entry.stock_ticker}}</td>
+            <td>{{entry.date}}</td>
+            <td>{{entry.notes}}</td>
+            <td>
+                <a [routerLink]="['/create', entry.id]" btn class="btn-sm btn-success">Edit</a>
+                &nbsp;
+                <button class="btn btn-sm btn-danger" (click)="deleteEntry(entry.id)">Delete</button></td>
+
+          </tr>
+        
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,9 @@
+body{
+    background-color: lightslategrey;
+    min-height: 100vh;
+}
+
+.WebContainer{
+    width: 100%;
+    height: auto;
+}
